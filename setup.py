@@ -88,7 +88,7 @@ if __name__ == '__main__':
     extras['dev'] = extras['all'] + [
         'wheel', 'sphinx', 'gitchangelog', 'mako', 'sphinx_rtd_theme',
         'setuptools>=36.0.1', 'sphinxcontrib-restbuilder', 'nose', 'coveralls',
-        'ddt'
+        'ddt', 'sphinx-click', 'matplotlib'
     ]
 
     setup(
@@ -137,9 +137,11 @@ if __name__ == '__main__':
         ],
         install_requires=[
             'numpy',
+            'openpyxl',
             'pandas',
             'scipy',
             'schedula>=0.3.1',
+            'xlrd>=1.0.0',
         ],
         entry_points={
             'console_scripts': [

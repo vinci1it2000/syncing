@@ -1,6 +1,8 @@
 -r base.pip
+-r cli.pip
 
 nose
 coveralls
 ddt
 dill
+matplotlib
