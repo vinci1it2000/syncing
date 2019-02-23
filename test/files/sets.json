@@ -1,0 +1,33 @@
+{
+  "Sheet1": {
+    "x": "x",
+    "y": "y1"
+  },
+  "Sheet2": {
+    "x": "x",
+    "y": "y1",
+    "a": "y2",
+    "b": "y3"
+  },
+  "Sheet3": {
+    "x": "x",
+    "Y": "y1",
+    "linear": "y2",
+    "nearest": "y2",
+    "zero": "y2",
+    "slinear": "y2",
+    "quadratic": "y2",
+    "cubic": "y2",
+    "pchip": "y2",
+    "akima": "y2",
+    "integral": "y2",
+    "polynomial0": "y2",
+    "polynomial1": "y2",
+    "polynomial2": "y2",
+    "polynomial3": "y2",
+    "polynomial4": "y2",
+    "spline5": "y2",
+    "spline7": "y2",
+    "spline9": "y2"
+  }
+}

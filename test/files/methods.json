@@ -1,0 +1,21 @@
+{
+  "Sheet3": {
+    "linear": "linear",
+    "nearest": "nearest",
+    "zero": "zero",
+    "slinear": "slinear",
+    "quadratic": "quadratic",
+    "cubic": "cubic",
+    "pchip": "pchip",
+    "akima": "akima",
+    "integral": "integral",
+    "polynomial0": "polynomial0",
+    "polynomial1": "polynomial1",
+    "polynomial2": "polynomial2",
+    "polynomial3": "polynomial3",
+    "polynomial4": "polynomial4",
+    "spline5": "spline5",
+    "spline7": "spline7",
+    "spline9": "spline9"
+  }
+}
