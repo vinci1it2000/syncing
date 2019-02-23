@@ -42,7 +42,7 @@ class TestCMD(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        shutil.rmtree(cls.temp)
+        shutil.rmtree(cls.temp, ignore_errors=True)
 
     @ddt.idata((
             ([], 2, 0),
