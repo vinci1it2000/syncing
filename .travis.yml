@@ -1,0 +1,52 @@
+language: python
+python:
+  - "3.5"
+  - "3.6"
+
+env:
+  - EXTRAS=base
+  - EXTRAS=excel
+  - EXTRAS=plot
+  - EXTRAS=all
+  - EXTRAS=dev
+
+matrix:
+  include:
+    - python: 3.7
+      dist: xenial
+      sudo: true
+      env: EXTRAS=base
+    - python: 3.7
+      dist: xenial
+      sudo: true
+      env: EXTRAS=excel
+    - python: 3.7
+      dist: xenial
+      sudo: true
+      env: EXTRAS=plot
+    - python: 3.7
+      dist: xenial
+      sudo: true
+      env: EXTRAS=all
+    - python: 3.7
+      dist: xenial
+      sudo: true
+      env: EXTRAS=dev
+
+addons:
+  apt:
+    packages:
+      - graphviz
+
+# command to install dependencies
+install:
+  - if [[ $EXTRAS == 'all' ]]; then pip install sphinx; fi
+  - pip install -r requirements/test.pip
+  - pip install -e .[$EXTRAS]
+
+# command to run tests
+script:
+  - coverage run --source=syncing setup.py test
+
+after_success:
+  - if [[ $TRAVIS_PYTHON_VERSION == '3.6' && $EXTRAS == 'all' ]]; then coveralls; fi
