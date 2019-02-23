@@ -1,7 +1,37 @@
 Changelog
 =========
 
-v1.0.0 (2019-02-21)
+
+v1.0.0 (2019-02-23)
 -------------------
 
-First release.
+Feat
+~~~~
+- (doc): Add sphinx documentation.
+
+- (appveyor, travis): Configure continuous integration.
+
+- (test): Add test cases.
+
+- (setup): Add setup script.
+
+- (doc): Add documentation.
+
+- (cli): Add command line interface.
+
+- (core): Add processing chain model.
+
+- (rw): Add `read` and `write` models.
+
+- (model): Add model.
+
+
+Fix
+~~~
+- (test): Ignore errors when deleting temp folder.
+
+- (setup): Correct requirements.
+
+- (test): Skip doctest of DataFrame.
+
+- (test): Correct test case number approx.

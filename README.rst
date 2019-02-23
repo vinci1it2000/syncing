@@ -138,7 +138,7 @@ First of all, we generate synthetically the data-sets to feed the model:
     :alt: Travis build status
     :target: https://travis-ci.org/vinci1it2000/syncing
 
-.. |appveyor_status| image:: https://ci.appveyor.com/api/projects/status/syncing?svg=true
+.. |appveyor_status| image:: https://ci.appveyor.com/api/projects/status/e8808h3oxjypvt46/branch/master?svg=true
     :alt: Appveyor build status
     :target: https://ci.appveyor.com/project/vinci1it2000/syncing
 
