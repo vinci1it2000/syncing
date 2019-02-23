@@ -10,8 +10,10 @@ import ddt
 import json
 import shutil
 import unittest
+import numpy as np
 import pandas as pd
 import os.path as osp
+import schedula as sh
 from click.testing import CliRunner
 import syncing.cli as cli
 
@@ -69,7 +71,13 @@ class TestCMD(unittest.TestCase):
             res = osp.join(results_dir, args[1])
             if osp.isfile(res):
                 with open(res) as e, open(args[1]) as r:
-                    self.assertEqual(json.load(e), json.load(r))
+                    self.assertEqual({
+                        k: np.round(v, 7).tolist()
+                        for k, v in sh.stack_nested_keys(json.load(e))
+                    }, {
+                        k: np.round(v, 7).tolist()
+                        for k, v in sh.stack_nested_keys(json.load(r))
+                    })
 
     @ddt.idata((
             ([], 0, cli.template.params[0].default),
