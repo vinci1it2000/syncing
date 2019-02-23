@@ -121,7 +121,7 @@ First of all, we generate synthetically the data-sets to feed the model:
 
     >>> import pandas as pd
     >>> import schedula as sh
-    >>> pd.DataFrame(sol['shifts'], index=[0])
+    >>> pd.DataFrame(sol['shifts'], index=[0])  # doctest: +SKIP
          obd  dyno
     ...
     >>> df = pd.DataFrame(dict(sh.stack_nested_keys(sol['resampled'])))
