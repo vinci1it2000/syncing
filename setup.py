@@ -81,8 +81,8 @@ if __name__ == '__main__':
 
     extras = {
         'cli': ['click', 'click-log'],
-        'plot': ['graphviz', 'regex', 'flask', 'Pygments', 'lxml', 'bs4',
-                 'jinja2', 'docutils']  # ['schedula[plot]>=0.2.0']
+        'plot': ['graphviz', 'regex', 'flask', 'Pygments', 'lxml', 'jinja2',
+                 'beautifulsoup4', 'docutils']  # ['schedula[plot]>=0.2.0']
     }
     extras['all'] = sorted(functools.reduce(set.union, extras.values(), set()))
     extras['dev'] = extras['all'] + [
