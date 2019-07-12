@@ -2,6 +2,19 @@ Changelog
 =========
 
 
+v1.0.1 (2019-07-12)
+-------------------
+
+Feat
+~~~~
+- (cli): Show options defaults.
+
+
+Fix
+~~~
+- (setup) :gh:`1`: Update to canonical pypi name of beautifulsoup4.
+
+
 v1.0.0 (2019-02-23)
 -------------------
 
