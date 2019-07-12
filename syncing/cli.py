@@ -68,20 +68,21 @@ def template(output_file='template.xlsx'):
 @click.argument('input-file', type=click.Path(exists=True))
 @click.argument('output-file', type=click.Path(writable=True))
 @click.option(
-    '-R', '--reference-name', help='Reference data-set name.'
+    '-R', '--reference-name', help='Reference data-set name.',
+    show_default=True
 )
 @click.option(
-    '-x', '--x-label', default='x', multiple=True,
+    '-x', '--x-label', default='x', multiple=True, show_default=True,
     help='Default `var-name` of the common x-axis to synchronise and re-sampled'
          ' the data-sets.'
 )
 @click.option(
-    '-y', '--y-label', default='y', multiple=True,
+    '-y', '--y-label', default='y', multiple=True, show_default=True,
     help='Default `var-name` of the common y-axis to synchronise the data-sets.'
 )
 @click.option(
     '-I', '--interpolation-method', default='linear',
-    type=click.Choice(METHODS),
+    type=click.Choice(METHODS), show_default=True,
     help='Interpolation method used to re-sample all data-sets.'
 )
 @click.option(
