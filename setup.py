@@ -97,7 +97,7 @@ if __name__ == '__main__':
         packages=find_packages(exclude=[
             'test', 'test.*',
             'doc', 'doc.*',
-            'appveyor'
+            'appveyor', 'requirements'
         ]),
         url=url,
         project_urls=project_urls,
@@ -105,13 +105,11 @@ if __name__ == '__main__':
         license='EUPL 1.1+',
         author='Vincenzo Arcidiacono',
         author_email='vinci1it2000@gmail.com',
-        description='Parse and compile Excel formulas and workbooks in python '
-                    'code.',
+        description='Time series synchronization and resample library.',
         long_description=long_description,
         keywords=[
-            "python", "utility", "library", "excel", "formulas", "processing",
-            "calculation", "dependencies", "resolution", "scientific",
-            "engineering", "dispatch", "compiling",
+            "python", "utility", "library", "synchronize", "data", "scientific",
+            "engineering", "resample", "time series"
         ],
         classifiers=[
             "Programming Language :: Python",
