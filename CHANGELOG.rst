@@ -2,6 +2,18 @@ Changelog
 =========
 
 
+v1.0.3 (2019-08-20)
+-------------------
+
+Feat
+~~~~
+- (setup) :gh:`3`: Add env `ENABLE_SETUP_LONG_DESCRIPTION`.
+
+- (setup) :gh:`4`: Build as `universal` wheel.
+
+- (write): Add un-synced data to output file.
+
+
 v1.0.2 (2019-07-15)
 -------------------
 
