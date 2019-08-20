@@ -10,3 +10,4 @@ setuptools>=36.0.1
 sphinxcontrib-restbuilder
 sphinx-click
 matplotlib
+twine
