@@ -20,12 +20,12 @@ Sub-Modules:
     rw
     cli
 """
+import numpy as np
 import functools
 import schedula as sh
 from syncing._version import *
 from syncing import model
 from syncing.rw import read, write
-
 
 dsp = sh.BlueDispatcher(name='Processing Model', raises=True)
 
@@ -58,11 +58,16 @@ def parse_data(raw_data, sets_mapping=None):
     :rtype: dict
     """
     if sets_mapping is None:
-        return raw_data
-    data = {}
-    for (i, j), k in sh.stack_nested_keys(sets_mapping):
-        sh.get_nested_dicts(data, i)[j] = raw_data[i][k]
-    return data
+        data = raw_data
+    else:
+        data = {}
+        for (i, j), k in sh.stack_nested_keys(sets_mapping):
+            sh.get_nested_dicts(data, i)[j] = raw_data[i][k]
+    parsed_data = {}
+    for (i, j), v in sh.stack_nested_keys(data):
+        if not np.isnan(v).all():
+            sh.get_nested_dicts(parsed_data, i)[j] = v
+    return parsed_data
 
 
 dsp.add_data('x_label', 'x')
