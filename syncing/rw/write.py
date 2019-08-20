@@ -63,9 +63,10 @@ def save_excel(output_fpath, outputs):
             )
         if 'resampled' in outputs:
             data = dict(sh.stack_nested_keys(outputs['resampled']))
-            pd.DataFrame(data).to_excel(
-                writer, 'synced'
-            )
+            pd.DataFrame(data).to_excel(writer, 'synced')
+
+        for name, data in outputs.get('data', {}).items():
+            pd.DataFrame(data).to_excel(writer, 'origin.%s' % name)
     return output_fpath
 
 
