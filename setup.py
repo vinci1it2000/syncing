@@ -150,6 +150,6 @@ if __name__ == '__main__':
             ],
         },
         extras_require=extras,
-        tests_require=['nose>=1.0', 'ddt'],
+        tests_require=['nose>=1.0', 'ddt', 'dill', 'matplotlib'],
         test_suite='nose.collector',
     )
