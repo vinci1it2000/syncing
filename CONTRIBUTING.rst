@@ -3,7 +3,7 @@ Contributing to syncing
 
 If you want to contribute to **syncing** and make it better, your help is very
 welcome. The contribution should be sent by a *pull request*. Next sections will
-explain how to implement and submit a new excel function:
+explain how to implement and submit a new functionality:
 
 - clone the repository
 - implement a new functionality
