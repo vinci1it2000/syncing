@@ -1,3 +1,7 @@
 schedula[sphinx] >= 0.3.0
 sphinx-click
 matplotlib
+scipy
+pandas
+click
+click-log
