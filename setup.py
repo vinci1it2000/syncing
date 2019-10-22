@@ -89,18 +89,16 @@ if __name__ == '__main__':
     # noinspection PyTypeChecker
     extras['all'] = sorted(functools.reduce(set.union, extras.values(), set()))
     extras['dev'] = extras['all'] + [
-        'wheel', 'sphinx', 'gitchangelog', 'mako', 'sphinx_rtd_theme',
+        'wheel', 'sphinx', 'gitchangelog', 'mako', 'sphinx_rtd_theme', 'ddt',
         'setuptools>=36.0.1', 'sphinxcontrib-restbuilder', 'nose', 'coveralls',
-        'ddt', 'sphinx-click', 'matplotlib'
+        'sphinx-click', 'matplotlib'
     ]
 
     setup(
         name=name,
         version=proj_ver,
         packages=find_packages(exclude=[
-            'test', 'test.*',
-            'doc', 'doc.*',
-            'appveyor', 'requirements'
+            'test', 'test.*', 'doc', 'doc.*', 'appveyor', 'requirements'
         ]),
         url=url,
         project_urls=project_urls,

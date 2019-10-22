@@ -16,7 +16,6 @@
 import sys
 import os
 from os.path import abspath, join, dirname
-from syncing._version import __version__
 
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
@@ -28,6 +27,8 @@ prj_dir = abspath(join(dirname(__file__), '..'))
 sys.path.insert(0, prj_dir)
 sys.path.append(abspath(join(dirname(__file__), '_ext')))
 # -- General configuration ------------------------------------------------
+
+from syncing._version import __version__
 
 # If your documentation needs a minimal Sphinx version, state it here.
 # needs_sphinx = '1.0'
