@@ -89,8 +89,8 @@ if __name__ == '__main__':
     extras['all'] = sorted(functools.reduce(set.union, extras.values(), set()))
     extras['dev'] = extras['all'] + [
         'wheel', 'sphinx', 'gitchangelog', 'mako', 'sphinx_rtd_theme', 'ddt',
-        'setuptools>=36.0.1', 'sphinxcontrib-restbuilder', 'nose', 'coveralls',
-        'sphinx-click', 'matplotlib'
+        'sphinxcontrib-restbuilder', 'nose', 'coveralls', 'sphinx-click',
+        'matplotlib'
     ]
 
     setup(
