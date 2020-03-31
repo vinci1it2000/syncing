@@ -2,6 +2,54 @@ Changelog
 =========
 
 
+v1.0.5 (2020-03-31)
+-------------------
+
+Feat
+~~~~
+- (core): Update build script.
+
+- (test): Add test cases for the new option commands.
+
+- (setup): Update schedula requirement.
+
+- (cli): Add option to execute only the re-sampling.
+
+- (doc): Add code of conduct.
+
+- (github): Add issues and pull requests templates.
+
+- (core): Add support for python 3.8 and drop python 3.5 and drop
+  `appveyor`.
+
+- (cli): Add option to filter out the `data-names` to work.
+
+
+Fix
+~~~
+- (setup) :gh:`5`: Drop setuptools dependency from `setup.py`
+
+- (cli): Correct logging level.
+
+- (travis): Remove graphviz installation in travis.
+
+- (travis): Correct travis test execution.
+
+- (doc): Correct PEP8.
+
+- (rtd): Add missing requirements.
+
+- (rtd): Correct importing issue.
+
+- (doc): Correct contrib.
+
+- (setup): Add missing test requirements.
+
+- (setup): Remove `nose` from `setup_requires`.
+
+- (build): Improve cleaning.
+
+
 v1.0.4 (2019-08-21)
 -------------------
 
