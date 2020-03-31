@@ -35,6 +35,10 @@ def polynomial_interpolation(x, xp, fp, order=1):
         The y-coordinates of the data points, same length as xp.
     :type fp: numpy.array
 
+    :param order:
+        Polynomial order.
+    :type order: int
+
     :return:
         Re-sampled y-values.
     :rtype: numpy.array
@@ -42,6 +46,7 @@ def polynomial_interpolation(x, xp, fp, order=1):
     return np.poly1d(np.polyfit(xp, fp, order))(x)
 
 
+# noinspection PyPep8Naming
 def _cum_integral(x, xp, fp):
     from scipy.integrate import cumtrapz
     X = np.unique(np.concatenate((x, xp)))
@@ -49,6 +54,7 @@ def _cum_integral(x, xp, fp):
     return cumtrapz(Y, X, initial=0)[np.searchsorted(X, x)]
 
 
+# noinspection PyPep8Naming
 def integral_interpolation(x, xp, fp):
     """
     Re-samples data maintaining the signal integral.
@@ -76,7 +82,7 @@ def integral_interpolation(x, xp, fp):
     X, dx = np.zeros(n + 1), np.zeros(n + 1)
     dx[1:-1] = np.diff(x)
     X[0], X[1:-1], X[-1] = x[0], x[:-1] + dx[1:-1] / 2, x[-1]
-    I = np.diff(_cum_integral(X, xp, fp))
+    integral_matrix = np.diff(_cum_integral(X, xp, fp))
 
     dx /= 8.0
     # noinspection PyTypeChecker
@@ -84,7 +90,7 @@ def integral_interpolation(x, xp, fp):
     i, j = np.indices(A.shape)
     A[i == j - 1] = A[i - 1 == j] = dx[1:-1]
 
-    return np.linalg.solve(A, I)
+    return np.linalg.solve(A, integral_matrix)
 
 
 METHODS = ('linear', 'nearest', 'zero', 'slinear', 'quadratic', 'cubic')
@@ -100,12 +106,12 @@ METHODS['akima'] = functools.partial(
     _interp_wrapper, sci_itp.Akima1DInterpolator
 )
 METHODS['integral'] = integral_interpolation
-for i in range(5):
-    METHODS['polynomial%d' % i] = functools.partial(
-        polynomial_interpolation, order=i
+for k in range(5):
+    METHODS['polynomial%d' % k] = functools.partial(
+        polynomial_interpolation, order=k
     )
 
-for i in range(5, 10, 2):
-    METHODS['spline%d' % i] = functools.partial(
-        _interp_wrapper, sci_itp.interp1d, kind=i, **_kw
+for k in range(5, 10, 2):
+    METHODS['spline%d' % k] = functools.partial(
+        _interp_wrapper, sci_itp.interp1d, kind=k, **_kw
     )

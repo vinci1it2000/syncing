@@ -54,6 +54,7 @@ def _get(labels, name, data, *keys):
     return [data[labels[key]] for key in keys]
 
 
+# noinspection PyPep8Naming
 def _compute_shifts(ref, *data):
     import numpy as np
     import numpy.fft as fft

@@ -35,6 +35,7 @@ def file_ext(*ext):
     """
     ext = tuple('.%s' % k for k in ext)
 
+    # noinspection PyUnusedLocal
     def domain(fpath, *args):
         return fpath.lower().endswith(ext)
 
