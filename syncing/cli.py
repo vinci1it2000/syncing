@@ -43,7 +43,6 @@ _process = sh.SubDispatch(syncing.dsp, ['written'], output_type='value')
     'syncing', context_settings=dict(help_option_names=['-h', '--help'])
 )
 @click.version_option(__version__)
-@click_log.simple_verbosity_option(logger)
 def cli():
     """
     SYNCING command line tool.
@@ -55,6 +54,7 @@ def cli():
     'output-file', default='template.xlsx', required=False,
     type=click.Path(writable=True)
 )
+@click_log.simple_verbosity_option(logger)
 def template(output_file='template.xlsx'):
     """
     Writes a sample template OUTPUT_FILE.
@@ -109,6 +109,7 @@ def template(output_file='template.xlsx'):
     '-H', '--header', multiple=True, type=int,
     help='Row (0-indexed) to use for the column labels.'
 )
+@click_log.simple_verbosity_option(logger)
 def sync(input_file, output_file, **kw):
     """
     Synchronise and re-sample data-sets defined in INPUT_FILE and writes shifts
