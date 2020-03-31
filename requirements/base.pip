@@ -2,5 +2,5 @@ numpy
 openpyxl
 pandas
 scipy
-schedula>=0.3.1
+schedula>=1.1.1
 xlrd>=1.0.0

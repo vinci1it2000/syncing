@@ -83,8 +83,7 @@ if __name__ == '__main__':
 
     extras = {
         'cli': ['click', 'click-log'],
-        'plot': ['graphviz', 'regex', 'flask', 'Pygments', 'lxml', 'jinja2',
-                 'beautifulsoup4', 'docutils']  # ['schedula[plot]>=0.2.0']
+        'plot': ['graphviz', 'regex', 'flask', 'Pygments', 'jinja2', 'docutils']
     }
     # noinspection PyTypeChecker
     extras['all'] = sorted(functools.reduce(set.union, extras.values(), set()))
@@ -139,7 +138,7 @@ if __name__ == '__main__':
             'openpyxl',
             'pandas',
             'scipy',
-            'schedula>=0.3.1',
+            'schedula>=1.1.1',
             'xlrd>=1.0.0',
         ],
         entry_points={

@@ -1,4 +1,4 @@
-schedula[sphinx] >= 0.3.0
+schedula[sphinx] >= 1.1.1
 sphinx-click
 matplotlib
 scipy
