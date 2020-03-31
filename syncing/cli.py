@@ -102,6 +102,10 @@ def template(output_file='template.xlsx'):
          '`{"<set-name>": {"<var-name>": "<interp>", ...}, ...}`.'
 )
 @click.option(
+    '-NS', '--no-sync', is_flag=True,
+    help='Executes only the re-sampling without data synchronization.'
+)
+@click.option(
     '-H', '--header', multiple=True, type=int,
     help='Row (0-indexed) to use for the column labels.'
 )

@@ -76,9 +76,10 @@ dsp.add_data('y_label', 'y')
 dsp.add_data('labels', None, sh.inf(1, 0))
 dsp.add_data('methods', None, sh.inf(1, 0))
 dsp.add_data('sets_mapping', None, sh.inf(1, 0))
+dsp.add_data('no_sync', False)
 input_keys = [
     'methods', 'data', 'reference_name', 'labels', 'x_label', 'y_label',
-    'interpolation_method'
+    'interpolation_method', 'no_sync'
 ]
 
 dsp.add_function(

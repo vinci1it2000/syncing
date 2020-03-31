@@ -74,8 +74,10 @@ def _compute_shifts(ref, *data):
         yield float((zero_index - np.argmax(c)) * dx)
 
 
-@sh.add_function(dsp, outputs=['shifts'])
-def calculate_shifts(labels, reference_name, data):
+@sh.add_function(
+    dsp, inputs_kwargs=True, inputs_defaults=True, outputs=['shifts']
+)
+def calculate_shifts(labels, reference_name, data, no_sync=False):
     """
     Calculates the shifts from the reference data-set.
 
@@ -93,12 +95,18 @@ def calculate_shifts(labels, reference_name, data):
         Data-sets.
     :type data: dict[str, dict[str, numpy.array]]
 
+    :param no_sync:
+        Skip the data synchronization?
+    :type no_sync: bool
+
     :return:
         Shifts from the reference data-set.
     :rtype: dict[str, float]
     """
-    data = {k: _get(labels, k, v, 'x', 'y') for k, v in data.items()}
     keys = [k for k in data if k != reference_name]
+    if no_sync:
+        return dict.fromkeys(keys, 0)
+    data = {k: _get(labels, k, v, 'x', 'y') for k, v in data.items()}
     args = sh.selector([reference_name] + keys, data, output_type='list')
     return sh.map_list(keys, *_compute_shifts(*args))
 
