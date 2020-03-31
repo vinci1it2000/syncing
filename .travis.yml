@@ -58,7 +58,7 @@ install:
 
 # command to run tests
 script:
-  - coverage run --source=syncing setup.py test
+  - coverage run --source=syncing setup.py tests
 
 after_success:
   - if [[ $TRAVIS_PYTHON_VERSION == '3.7' && $EXTRAS == 'all' && $TRAVIS_OS_NAME == 'linux' ]]; then coveralls; fi
