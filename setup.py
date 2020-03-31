@@ -114,11 +114,11 @@ if __name__ == '__main__':
         ],
         classifiers=[
             "Programming Language :: Python",
-            "Programming Language :: Python :: 3.5",
             "Programming Language :: Python :: 3.6",
             "Programming Language :: Python :: 3.7",
+            "Programming Language :: Python :: 3.8",
             "Programming Language :: Python :: Implementation :: CPython",
-            "Development Status :: 4 - Beta",
+            "Development Status :: 5 - Production/Stable",
             'Natural Language :: English',
             "Intended Audience :: Developers",
             "Intended Audience :: Science/Research",

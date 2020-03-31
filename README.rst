@@ -3,7 +3,7 @@
 #############################################
 syncing: Time series synchronization library.
 #############################################
-|pypi_ver| |travis_status| |appveyor_status| |cover_status| |docs_status|
+|pypi_ver| |travis_status| |cover_status| |docs_status|
 |dependencies| |github_issues| |python_ver| |proj_license|
 
 :release:       1.0.4
@@ -137,10 +137,6 @@ First of all, we generate synthetically the data-sets to feed the model:
 .. |travis_status| image:: https://travis-ci.org/vinci1it2000/syncing.svg?branch=master
     :alt: Travis build status
     :target: https://travis-ci.org/vinci1it2000/syncing
-
-.. |appveyor_status| image:: https://ci.appveyor.com/api/projects/status/e8808h3oxjypvt46/branch/master?svg=true
-    :alt: Appveyor build status
-    :target: https://ci.appveyor.com/project/vinci1it2000/syncing
 
 .. |cover_status| image:: https://coveralls.io/repos/github/vinci1it2000/syncing/badge.svg?branch=master
     :target: https://coveralls.io/github/vinci1it2000/syncing?branch=master
