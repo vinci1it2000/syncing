@@ -103,6 +103,3 @@ dsp.add_dispatcher(
     inputs=['outputs', 'output_fpath', 'template_fpath'],
     outputs=['written']
 )
-
-if __name__ == '__main__':
-    dsp.register().plot()

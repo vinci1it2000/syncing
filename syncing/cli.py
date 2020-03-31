@@ -123,7 +123,8 @@ def sync(input_file, output_file, **kw):
     kw['x_label'] = sh.bypass(*kw['x_label'])
     kw['y_label'] = sh.bypass(*kw['y_label'])
     kw = {k: v for k, v in kw.items() if v}
-    return _process(dict(input_fpath=input_file, output_fpath=output_file, **kw))
+    kw['input_fpath'], kw['output_fpath'] = input_file, output_file
+    return _process(kw)
 
 
 if __name__ == '__main__':

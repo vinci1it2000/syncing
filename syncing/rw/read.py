@@ -136,9 +136,6 @@ def read_excel(input_fpath, header=0, data_names=None):
         for sheet_name, df in pd.read_excel(xls, sheet_names, header).items():
             if not df.empty:
                 data[sheet_name] = {k: v.values for k, v in df.items()}
-                if isinstance(header, tuple) and len(header) > 1 and \
-                        any(c is not None for c in df.columns.names):
-                    data[sheet_name][tuple(df.columns.names)] = df.index.values
         return data, sheet_names[0]
 
 

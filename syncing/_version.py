@@ -27,7 +27,6 @@ __copyright__ = 'Copyright 2019-2020, Vincenzo Arcidiacono'
 if __name__ == '__main__':
     import sys
 
-    out = ';'.join(
+    sys.stdout.write(';'.join(
         eval(a[2:].replace('-', '_')) for a in sys.argv[1:] if a[:2] == '--'
-    )
-    sys.stdout.write(out)
+    ))
