@@ -60,6 +60,10 @@ class TestCMD(unittest.TestCase):
               '-x', 'x', '-x', 'x', '-y', 'y', '-y', 'y'], 0, 1),
             ([files['xl_H'], 'sync3.json', '-H', 0, '-H', 1,
               '-x', 'x', '-x', 'x', '-y', 'y', '-y', 'y'], 0, 1),
+            ([files['xl'], 'sync4.xlsx', '-y', 'y1', '-NS'], 0, 1),
+            ([files['xl'], 'sync4.json', '-y', 'y1', '-NS'], 0, 1),
+            ([files['xl'], 'sync5.xlsx', 'Sheet2', 'Sheet1', '-y', 'y1'], 0, 1),
+            ([files['xl'], 'sync5.json', 'Sheet2', 'Sheet1', '-y', 'y1'], 0, 1),
     ))
     def test_sync(self, data):
         args, exit_code, file = data
