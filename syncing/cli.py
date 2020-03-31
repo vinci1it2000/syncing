@@ -65,8 +65,9 @@ def template(output_file='template.xlsx'):
 
 
 @cli.command('sync', short_help='Synchronise and re-sample whole data-sets.')
-@click.argument('input-file', type=click.Path(exists=True))
-@click.argument('output-file', type=click.Path(writable=True))
+@click.argument('input-file', type=click.Path(exists=True), nargs=1)
+@click.argument('output-file', type=click.Path(writable=True), nargs=1)
+@click.argument('data-names', nargs=-1)
 @click.option(
     '-R', '--reference-name', help='Reference data-set name.',
     show_default=True
@@ -112,6 +113,8 @@ def sync(input_file, output_file, **kw):
     INPUT_FILE: Data-sets input file (format: .xlsx, .json).
 
     OUTPUT_FILE: output file (format: .xlsx, .json).
+
+    DATA_NAMES: to filter out the data sets to synchronize.
     """
     kw['x_label'] = sh.bypass(*kw['x_label'])
     kw['y_label'] = sh.bypass(*kw['y_label'])

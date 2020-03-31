@@ -33,7 +33,8 @@ dsp.add_data('interpolation_method', 'linear')
 dsp.add_dispatcher(
     read.dsp,
     inputs=['input_fpath', 'header', 'sets_mapping_fpath', 'labels_fpath',
-            'methods_fpath', 'interpolation_method', 'x_label', 'y_label'],
+            'methods_fpath', 'interpolation_method', 'x_label', 'y_label',
+            'data_names'],
     outputs=['raw_data', 'reference_name', 'sets_mapping', 'labels', 'methods']
 )
 

@@ -109,7 +109,7 @@ dsp.add_data('reference_name', description='Reference data-set name.')
 @sh.add_function(dsp, outputs=['raw_data', 'reference_name'],
                  inputs_kwargs=True, inputs_defaults=True,
                  input_domain=file_ext('xlsx', 'xls'))
-def read_excel(input_fpath, header=0):
+def read_excel(input_fpath, header=0, data_names=None):
     """
     Reads the excel file.
 
@@ -121,6 +121,10 @@ def read_excel(input_fpath, header=0):
         Row (0-indexed) to use for the column labels.
     :type header: str
 
+    :param data_names:
+        Data names to filter out the data sets to synchronize.
+    :type data_names: list
+
     :return:
         Raw data-sets and reference data-set name.
     :rtype: dict[str, dict[str, numpy.array]], str
@@ -128,23 +132,31 @@ def read_excel(input_fpath, header=0):
     import pandas as pd
     with pd.ExcelFile(input_fpath) as xls:
         data, names = {}, xls.book.sheet_names()
-        for sheet_name, df in pd.read_excel(xls, names, header).items():
+        sheet_names = list(data_names or names)
+        for sheet_name, df in pd.read_excel(xls, sheet_names, header).items():
             if not df.empty:
                 data[sheet_name] = {k: v.values for k, v in df.items()}
                 if isinstance(header, tuple) and len(header) > 1 and \
                         any(c is not None for c in df.columns.names):
                     data[sheet_name][tuple(df.columns.names)] = df.index.values
-        return data, names[0]
+        return data, sheet_names[0]
 
 
-@sh.add_function(dsp, outputs=['raw_data'], input_domain=file_ext('json'))
-def read_json(input_fpath):
+@sh.add_function(
+    dsp,  inputs_kwargs=True, inputs_defaults=True, outputs=['raw_data'],
+    input_domain=file_ext('json')
+)
+def read_json(input_fpath, data_names=None):
     """
     Reads the json file.
 
     :param input_fpath:
         Input file path.
     :type input_fpath: str
+
+    :param data_names:
+        Data names to filter out the data sets to synchronize.
+    :type data_names: list
 
     :return:
         Raw data-sets.
@@ -155,5 +167,6 @@ def read_json(input_fpath):
     data = {}
     with open(input_fpath) as file:
         for k, v in sh.stack_nested_keys(json.load(file)):
-            sh.get_nested_dicts(data, k[0])[sh.bypass(*k[1:])] = np.array(v)
+            if not data_names or k[0] in data_names:
+                sh.get_nested_dicts(data, k[0])[sh.bypass(*k[1:])] = np.array(v)
         return data
