@@ -22,7 +22,6 @@ matrix:
         - conda create --yes -n test python=3.6
         - source activate test
         - conda --version ; python --version ; pip --version
-        - choco install graphviz.portable
 
     - os: windows
       language: sh
@@ -35,7 +34,6 @@ matrix:
         - conda create --yes -n test python=3.7
         - source activate test
         - conda --version ; python --version ; pip --version
-        - choco install graphviz.portable
 
     - os: windows
       language: sh
@@ -48,7 +46,6 @@ matrix:
         - conda create --yes -n test python=3.8
         - source activate test
         - conda --version ; python --version ; pip --version
-        - choco install graphviz.portable
 
 # command to install dependencies
 install:
