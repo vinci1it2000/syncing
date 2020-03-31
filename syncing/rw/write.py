@@ -13,6 +13,7 @@ import os.path as osp
 import schedula as sh
 from . import file_ext
 
+#: Write Model.
 dsp = sh.BlueDispatcher(name='write_data', raises=True)
 
 

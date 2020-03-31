@@ -27,6 +27,7 @@ from syncing._version import *
 from syncing import model
 from syncing.rw import read, write
 
+#: Processing Model.
 dsp = sh.BlueDispatcher(name='Processing Model', raises=True)
 
 dsp.add_data('interpolation_method', 'linear')

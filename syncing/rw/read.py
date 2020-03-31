@@ -11,6 +11,7 @@ It contains functions and a model `dsp` to read input files.
 import schedula as sh
 from . import file_ext
 
+#: Read Model.
 dsp = sh.BlueDispatcher(name='read_data', raises=True)
 
 
@@ -140,7 +141,7 @@ def read_excel(input_fpath, header=0, data_names=None):
 
 
 @sh.add_function(
-    dsp,  inputs_kwargs=True, inputs_defaults=True, outputs=['raw_data'],
+    dsp, inputs_kwargs=True, inputs_defaults=True, outputs=['raw_data'],
     input_domain=file_ext('json')
 )
 def read_json(input_fpath, data_names=None):

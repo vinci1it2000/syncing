@@ -21,6 +21,7 @@ Sub-Modules:
 """
 import schedula as sh
 
+#: Computational Model.
 dsp = sh.BlueDispatcher(name='Computational Model', raises=True)
 
 
