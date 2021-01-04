@@ -2,6 +2,16 @@ Changelog
 =========
 
 
+v1.0.6 (2021-01-04)
+-------------------
+
+Fix
+~~~
+- (rw): Use `openpyxl` to read `xlsx` files.
+
+- (doc): Update copyrights.
+
+
 v1.0.5 (2020-03-31)
 -------------------
 
