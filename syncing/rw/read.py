@@ -131,8 +131,9 @@ def read_excel(input_fpath, header=0, data_names=None):
     :rtype: dict[str, dict[str, numpy.array]], str
     """
     import pandas as pd
-    with pd.ExcelFile(input_fpath) as xls:
-        data, names = {}, xls.book.sheet_names()
+    engine = input_fpath.endswith('.xlsx') and 'openpyxl' or 'xlrd'
+    with pd.ExcelFile(input_fpath, engine=engine) as xls:
+        data, names = {}, xls.sheet_names
         sheet_names = list(data_names or names)
         for sheet_name, df in pd.read_excel(xls, sheet_names, header).items():
             if not df.empty:

@@ -94,7 +94,7 @@ class TestCMD(unittest.TestCase):
         self.assertEqual(exit_code, result.exit_code)
         if exit_code == 0:
             self.assertTrue(osp.isfile(file))
-            with pd.ExcelFile(file) as xl:
+            with pd.ExcelFile(file, engine='openpyxl') as xl:
                 self.assertEqual({'ref', 'data'}, set(xl.sheet_names))
                 self.assertEqual(
                     {'x', 'y'}, set(pd.read_excel(xl, 'ref').columns)

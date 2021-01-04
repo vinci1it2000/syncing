@@ -28,7 +28,7 @@ def save_excel_template(template_fpath):
     """
     import pandas as pd
     os.makedirs(osp.dirname(template_fpath) or '.', exist_ok=True)
-    with pd.ExcelWriter(template_fpath) as writer:
+    with pd.ExcelWriter(template_fpath, engine='openpyxl') as writer:
         pd.DataFrame(
             {'x': [], 'y': []}, index=[]
         ).to_excel(writer, 'ref', index=False)
@@ -57,7 +57,7 @@ def save_excel(output_fpath, outputs):
     """
     import pandas as pd
     os.makedirs(osp.dirname(output_fpath) or '.', exist_ok=True)
-    with pd.ExcelWriter(output_fpath) as writer:
+    with pd.ExcelWriter(output_fpath, engine='openpyxl') as writer:
         if 'shifts' in outputs:
             pd.DataFrame(outputs['shifts'], index=[0]).T.to_excel(
                 writer, 'shifts', header=False
