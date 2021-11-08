@@ -73,12 +73,12 @@ def template(output_file='template.xlsx'):
     show_default=True
 )
 @click.option(
-    '-x', '--x-label', default='x', multiple=True, show_default=True,
+    '-x', '--x-label', default=['x'], multiple=True, show_default=True,
     help='Default `var-name` of the common x-axis to synchronise and re-sampled'
          ' the data-sets.'
 )
 @click.option(
-    '-y', '--y-label', default='y', multiple=True, show_default=True,
+    '-y', '--y-label', default=['y'], multiple=True, show_default=True,
     help='Default `var-name` of the common y-axis to synchronise the data-sets.'
 )
 @click.option(
