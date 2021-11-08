@@ -2,6 +2,19 @@ Changelog
 =========
 
 
+v1.0.7 (2021-11-08)
+-------------------
+
+Feat
+~~~~
+- (core): Add python 3.9.
+
+
+Fix
+~~~
+- (cli): Correct default options.
+
+
 v1.0.6 (2021-01-04)
 -------------------
 
