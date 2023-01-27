@@ -36,7 +36,8 @@ dsp.add_dispatcher(
     inputs=['input_fpath', 'header', 'sets_mapping_fpath', 'labels_fpath',
             'methods_fpath', 'interpolation_method', 'x_label', 'y_label',
             'data_names'],
-    outputs=['raw_data', 'reference_name', 'sets_mapping', 'labels', 'methods']
+    outputs=['raw_data', 'reference_name', 'sets_mapping', 'labels', 'methods'],
+    include_defaults=True
 )
 
 
@@ -102,5 +103,6 @@ dsp.add_function(
 dsp.add_dispatcher(
     write.dsp,
     inputs=['outputs', 'output_fpath', 'template_fpath'],
-    outputs=['written']
+    outputs=['written'],
+    include_defaults=True
 )

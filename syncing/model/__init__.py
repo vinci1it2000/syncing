@@ -98,7 +98,7 @@ def calculate_shifts(labels, reference_name, data, no_sync=False):
     :type data: dict[str, dict[str, numpy.array]]
 
     :param no_sync:
-        Skip the data synchronization?
+        Skip the data synchronisation?
     :type no_sync: bool
 
     :return:

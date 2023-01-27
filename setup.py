@@ -105,10 +105,10 @@ if __name__ == '__main__':
         license='EUPL 1.1+',
         author='Vincenzo Arcidiacono',
         author_email='vinci1it2000@gmail.com',
-        description='Time series synchronization and resample library.',
+        description='Time series synchronisation and resample library.',
         long_description=long_description,
         keywords=[
-            "python", "utility", "library", "synchronize", "data", "scientific",
+            "python", "utility", "library", "synchronise", "data", "scientific",
             "engineering", "resample", "time series"
         ],
         classifiers=[

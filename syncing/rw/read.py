@@ -123,7 +123,7 @@ def read_excel(input_fpath, header=0, data_names=None):
     :type header: str
 
     :param data_names:
-        Data names to filter out the data sets to synchronize.
+        Data names to filter out the data sets to synchronise.
     :type data_names: list
 
     :return:
@@ -154,7 +154,7 @@ def read_json(input_fpath, data_names=None):
     :type input_fpath: str
 
     :param data_names:
-        Data names to filter out the data sets to synchronize.
+        Data names to filter out the data sets to synchronise.
     :type data_names: list
 
     :return:

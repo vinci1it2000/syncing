@@ -1,7 +1,7 @@
 .. _start-quick:
 
 #############################################
-syncing: Time series synchronization library.
+syncing: Time series synchronisation library.
 #############################################
 |pypi_ver| |travis_status| |cover_status| |docs_status|
 |dependencies| |github_issues| |python_ver| |proj_license|
@@ -14,7 +14,7 @@ syncing: Time series synchronization library.
 :wiki:          https://github.com/vinci1it2000/syncing/wiki/
 :download:      http://github.com/vinci1it2000/syncing/releases/
 :donate:        https://donorbox.org/syncing
-:keywords:      data, synchronization, re-sampling
+:keywords:      data, synchronisation, re-sampling
 :developers:    .. include:: AUTHORS.rst
 :license:       `EUPL 1.1+ <https://joinup.ec.europa.eu/software/page/eupl>`_
 
@@ -25,7 +25,7 @@ What is syncing?
 ================
 **syncing** is an useful library to synchronise and re-sample time series.
 
-**Synchronization** is based on the **fourier transform** and the
+**synchronisation** is based on the **fourier transform** and the
 **re-sampling** is performed with a specific interpolation method.
 
 Installation
@@ -102,7 +102,7 @@ First of all, we generate synthetically the data-sets to feed the model:
     ...     velocity=velocity + np.random.normal(0, 1, 1500)         # [km/h]
     ... )
 
-    To synchronize the data-sets and plot the workflow:
+    To synchronise the data-sets and plot the workflow:
 
     .. dispatcher:: sol
         :opt: workflow=True, graph_attr={'ratio': '1'}
@@ -116,7 +116,7 @@ First of all, we generate synthetically the data-sets to feed the model:
         >>> sol.plot(view=False)
         SiteMap(...)
 
-    Finally, we can analyze the time shifts and the synchronized and re-sampled
+    Finally, we can analyze the time shifts and the synchronised and re-sampled
     data-sets:
 
     >>> import pandas as pd

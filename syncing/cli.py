@@ -103,7 +103,7 @@ def template(output_file='template.xlsx'):
 )
 @click.option(
     '-NS', '--no-sync', is_flag=True,
-    help='Executes only the re-sampling without data synchronization.'
+    help='Executes only the re-sampling without data synchronisation.'
 )
 @click.option(
     '-H', '--header', multiple=True, type=int,
@@ -113,13 +113,13 @@ def template(output_file='template.xlsx'):
 def sync(input_file, output_file, **kw):
     """
     Synchronise and re-sample data-sets defined in INPUT_FILE and writes shifts
-    and synchronized data into the OUTPUT_FILE.
+    and synchronised data into the OUTPUT_FILE.
 
     INPUT_FILE: Data-sets input file (format: .xlsx, .json).
 
     OUTPUT_FILE: output file (format: .xlsx, .json).
 
-    DATA_NAMES: to filter out the data sets to synchronize.
+    DATA_NAMES: to filter out the data sets to synchronise.
     """
     kw['x_label'] = sh.bypass(*kw['x_label'])
     kw['y_label'] = sh.bypass(*kw['y_label'])
