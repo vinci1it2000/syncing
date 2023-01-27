@@ -77,7 +77,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'syncing'
-copyright = '2019-2021 European Commission (JRC)'
+copyright = '2019-2023 European Commission (JRC)'
 author = 'Vincenzo Arcidiacono'
 
 # The version info for the project you're documenting, acts as replacement for
