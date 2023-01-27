@@ -2,6 +2,21 @@ Changelog
 =========
 
 
+v1.0.8 (2023-01-27)
+-------------------
+
+Feat
+~~~~
+- (core): Update build scripts.
+
+- (doc): Update Copyright.
+
+
+Fix
+~~~
+- (core): Correct bug due to schedula version.
+
+
 v1.0.7 (2021-11-08)
 -------------------
 
