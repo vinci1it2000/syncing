@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 cd "$(dirname "$0")" && cd ..
-
 while true; do
   echo "Do you want to build the package?[Y/n]"
   read yn
@@ -22,15 +21,15 @@ while true; do
   case ${yn} in
   [Yy] | "")
     while true; do
-      echo "Do you wish to publish on PyPI ('n' for TestPyPI)?[Y/n]"
+      echo "Do you wish to publish first on TestPyPI ('n' for PyPI)?[Y/n]"
       read yn
       case ${yn} in
-      [Yy] | "")
+      [Nn])
         twine upload dist/*
         exit
         ;;
 
-      [Nn])
+      [Yy] | "")
         twine upload --repository testpypi dist/*
         while true; do
           echo "Do you wish to publish on PyPI?[Y/n]"
