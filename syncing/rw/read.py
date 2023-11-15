@@ -135,7 +135,7 @@ def read_excel(input_fpath, header=0, data_names=None):
     with pd.ExcelFile(input_fpath, engine=engine) as xls:
         data, names = {}, xls.sheet_names
         sheet_names = list(data_names or names)
-        for sheet_name, df in pd.read_excel(xls, sheet_names, header).items():
+        for sheet_name, df in pd.read_excel(xls, sheet_name=sheet_names, header=header).items():
             if not df.empty:
                 data[sheet_name] = {k: v.values for k, v in df.items()}
         return data, sheet_names[0]
