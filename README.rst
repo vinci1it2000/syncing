@@ -4,7 +4,7 @@
 syncing: Time series synchronisation library.
 #############################################
 |pypi_ver| |test_status| |cover_status| |docs_status|
-|dependencies| |github_issues| |python_ver| |proj_license|
+|github_issues| |python_ver| |proj_license|
 
 :release:       1.0.8
 :date:          2023-01-27 18:10:00
@@ -162,7 +162,4 @@ First of all, we generate synthetically the data-sets to feed the model:
     :target: https://raw.githubusercontent.com/vinci1it2000/syncing/master/LICENSE.txt
     :alt: Project License
 
-.. |dependencies| image:: https://img.shields.io/requires/github/vinci1it2000/syncing.svg?
-    :target: https://requires.io/github/vinci1it2000/syncing/requirements/?branch=master
-    :alt: Dependencies up-to-date?
 .. _end-badges:
