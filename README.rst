@@ -6,8 +6,8 @@ syncing: Time series synchronisation library.
 |pypi_ver| |test_status| |cover_status| |docs_status|
 |github_issues| |python_ver| |proj_license|
 
-:release:       1.0.8
-:date:          2023-01-27 18:10:00
+:release:       1.0.9
+:date:          2023-11-15 12:10:00
 :repository:    https://github.com/vinci1it2000/syncing
 :pypi-repo:     https://pypi.org/project/syncing/
 :docs:          http://syncing.readthedocs.io/

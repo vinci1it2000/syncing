@@ -2,6 +2,29 @@ Changelog
 =========
 
 
+v1.0.9 (2023-11-15)
+-------------------
+
+Feat
+~~~~
+- (bin): Update publish script.
+
+- (doc): Add Read the Docs configuration file.
+
+- (test): Add github actions.
+
+
+Fix
+~~~
+- (doc): Correct issues links.
+
+- (read): Correct bug due to pandas version.
+
+- (doc): Remove broken badge.
+
+- (setup): Correct setup config file.
+
+
 v1.0.8 (2023-01-27)
 -------------------
 
